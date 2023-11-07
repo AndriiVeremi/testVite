@@ -28,6 +28,11 @@ const refs = {
   month: document.querySelector('.date-month'),
   year: document.querySelector('.date-year'),
   clock: document.querySelector('.digital-clock'),
+
+  seconds: document.querySelector('.clock-seconds__arrow'),
+  minutes: document.querySelector('.clock-minutes__arrow'),
+  hours: document.querySelector('.clock-hours__arrow'),
+  clock2: document.querySelector('.clock-center'),
 };
 
 setInterval(() => {
@@ -37,4 +42,9 @@ setInterval(() => {
     refs.month.textContent = namesOfMonth[currentDate.getMonth()];
     refs.year.textContent = currentDate.getFullYear();
     refs.clock.textContent = currentDate.toLocaleTimeString('uk');
+
+    // refs.seconds.style.transform = rotate('30 deg')`;
 }, 1000)
+
+
+

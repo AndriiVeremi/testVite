@@ -45,6 +45,7 @@ body {
   left: 50%;
   width: 5px;
   height: 40%;
+  transform: rotate(30 deg);
 }
 .clock-minutes__arrow {
   bottom: 50%;
