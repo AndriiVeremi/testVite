@@ -36,15 +36,18 @@ const refs = {
 };
 
 setInterval(() => {
-    const currentDate = new Date()
-    refs.day.textContent = arrDays[currentDate.getDay()];
-    refs.date.textContent = currentDate.getDate();
-    refs.month.textContent = namesOfMonth[currentDate.getMonth()];
-    refs.year.textContent = currentDate.getFullYear();
-    refs.clock.textContent = currentDate.toLocaleTimeString('uk');
+  const currentDate = new Date();
+  refs.day.textContent = arrDays[currentDate.getDay()];
+  refs.date.textContent = currentDate.getDate();
+  refs.month.textContent = namesOfMonth[currentDate.getMonth()];
+  refs.year.textContent = currentDate.getFullYear();
+  refs.clock.textContent = currentDate.toLocaleTimeString('uk');
 
-    // refs.seconds.style.transform = rotate('30 deg')`;
-}, 1000)
+  const sec = currentDate.getSeconds();
+  const min = currentDate.getMinutes();
+  const hours = currentDate.getHours();
 
-
-
+  refs.seconds.style.transform = `rotate(${(360 / 60) * sec}deg)`;
+  refs.minutes.style.transform = `rotate(${(360 / 60) * min}deg)`;
+  refs.hours.style.transform = `rotate(${(360 / 60) * hours}deg)`;
+}, 1000);
